@@ -1,0 +1,16 @@
+{
+  "config": {
+    "classmap-authoritative": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Schirrms\\iTop\\Extension\\": "src"
+    }
+  },
+  "name": "schirrms/schirrms-software-eol",
+  "type": "itop-extension",
+  "description": "Add EOL date to software and OS Version",
+  "require": {
+    "composer-runtime-api": "^2.0"
+  }
+}
