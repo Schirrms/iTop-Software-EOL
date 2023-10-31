@@ -3,64 +3,142 @@
   <constants>
   </constants>
   <classes>
-		<class id="OSVersion" _delta="must_exist">
-			<fields>
-				<field id="date_release" xsi:type="AttributeDate" _delta="define">
-					<sql>date_release</sql>
-					<default_value></default_value>
+    <class id="OSVersion" _delta="must_exist">
+      <fields>
+        <field id="date_release" xsi:type="AttributeDate" _delta="define">
+          <sql>date_release</sql>
+          <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
-				</field>
-				<field id="date_end_full_support" xsi:type="AttributeDate" _delta="define">
-					<sql>date_end_full_support</sql>
-					<default_value></default_value>
+        </field>
+        <field id="date_end_full_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_full_support</sql>
+          <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
-				</field>
-				<field id="date_end_normal_support" xsi:type="AttributeDate" _delta="define">
-					<sql>date_end_normal_support</sql>
-					<default_value></default_value>
+        </field>
+        <field id="date_end_normal_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_normal_support</sql>
+          <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
-				</field>
-				<field id="date_end_ext_support" xsi:type="AttributeDate" _delta="define">
-					<sql>date_end_ext_support</sql>
-					<default_value></default_value>
+        </field>
+        <field id="date_end_ext_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_ext_support</sql>
+          <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
-				</field>
-				<field id="date_end_custom_support" xsi:type="AttributeDate" _delta="define">
-					<sql>date_end_custom_support</sql>
-					<default_value></default_value>
+        </field>
+        <field id="date_end_custom_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_custom_support</sql>
+          <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
-				</field>
-				<field id="comment" xsi:type="AttributeText" _delta="define">
-						<sql>comment</sql>
-					<default_value></default_value>
+        </field>
+        <field id="endoflife_api" xsi:type="AttributeURL" _delta="define">
+          <sql>endoflife_api</sql>
+          <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
-				</field>				
-			</fields>
-			<presentation>
-				<details>
-					<items>
-						<item id="date_release" _delta="define">
-							<rank>30</rank>
-						</item>
-						<item id="date_end_full_support" _delta="define">
-							<rank>32</rank>
-						</item>
-						<item id="date_end_normal_support" _delta="define">
-							<rank>34</rank>
-						</item>
-						<item id="date_end_ext_support" _delta="define">
-							<rank>36</rank>
-						</item>
-						<item id="date_end_custom_support" _delta="define">
-							<rank>38</rank>
-						</item>
-						<item id="comment" _delta="define">
-							<rank>40</rank>
-						</item>
-					</items>
-				</details>
-			</presentation>
-		</class>
+          <target>_blank</target>
+          <validation_pattern>^https://endoflife\.date/api/.+/.+\.json$</validation_pattern>
+        </field>
+        <field id="comment" xsi:type="AttributeText" _delta="define">
+            <sql>comment</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>				
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="date_release" _delta="define">
+              <rank>52</rank>
+            </item>
+            <item id="date_end_full_support" _delta="define">
+              <rank>54</rank>
+            </item>
+            <item id="date_end_normal_support" _delta="define">
+              <rank>56</rank>
+            </item>
+            <item id="date_end_ext_support" _delta="define">
+              <rank>58</rank>
+            </item>
+            <item id="date_end_custom_support" _delta="define">
+              <rank>60</rank>
+            </item>
+            <item id="endoflife_api" _delta="define">
+              <rank>62</rank>
+            </item>
+            <item id="comment" _delta="define">
+              <rank>68</rank>
+            </item>
+          </items>
+        </details>
+      </presentation>
+    </class>
+    <class id="Software" _delta="must_exist">
+      <fields>
+        <field id="date_release" xsi:type="AttributeDate" _delta="define">
+          <sql>date_release</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="date_end_full_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_full_support</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="date_end_normal_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_normal_support</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="date_end_ext_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_ext_support</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="date_end_custom_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
+          <sql>date_end_custom_support</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="endoflife_api" xsi:type="AttributeURL" _delta="define">
+          <sql>endoflife_api</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <target>_blank</target>
+          <validation_pattern>^https://endoflife\.date/api/.+/.+\.json$</validation_pattern>
+        </field>
+        <field id="comment" xsi:type="AttributeText" _delta="define">
+            <sql>comment</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>				
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="date_release" _delta="define">
+              <rank>52</rank>
+            </item>
+            <item id="date_end_full_support" _delta="define">
+              <rank>54</rank>
+            </item>
+            <item id="date_end_normal_support" _delta="define">
+              <rank>56</rank>
+            </item>
+            <item id="date_end_ext_support" _delta="define">
+              <rank>58</rank>
+            </item>
+            <item id="date_end_custom_support" _delta="define">
+              <rank>60</rank>
+            </item>
+            <item id="endoflife_api" _delta="define">
+              <rank>62</rank>
+            </item>
+            <item id="comment" _delta="define">
+              <rank>68</rank>
+            </item>
+          </items>
+        </details>
+      </presentation>
+    </class>
   </classes>
   <menus>
   </menus>
