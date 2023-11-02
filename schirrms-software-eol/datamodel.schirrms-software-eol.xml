@@ -25,6 +25,16 @@
           <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
         </field>
+        <field id="latest_release" xsi:type="AttributeString" _delta="define">
+          <sql>latest_release</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="date_latest_release" xsi:type="AttributeDate" _delta="define">
+          <sql>date_latest_release</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
         <field id="date_end_custom_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
           <sql>date_end_custom_support</sql>
           <default_value></default_value>
@@ -58,11 +68,17 @@
             <item id="date_end_ext_support" _delta="define">
               <rank>58</rank>
             </item>
-            <item id="date_end_custom_support" _delta="define">
+            <item id="latest_release" _delta="define">
               <rank>60</rank>
             </item>
-            <item id="endoflife_api" _delta="define">
+            <item id="date_latest_release" _delta="define">
               <rank>62</rank>
+            </item>
+            <item id="date_end_custom_support" _delta="define">
+              <rank>64</rank>
+            </item>
+            <item id="endoflife_api" _delta="define">
+              <rank>66</rank>
             </item>
             <item id="comment" _delta="define">
               <rank>68</rank>
@@ -93,6 +109,16 @@
           <default_value></default_value>
           <is_null_allowed>true</is_null_allowed>
         </field>
+        <field id="latest_release" xsi:type="AttributeString" _delta="define">
+          <sql>latest_release</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="date_latest_release" xsi:type="AttributeDate" _delta="define">
+          <sql>date_latest_release</sql>
+          <default_value></default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
         <field id="date_end_custom_support" xsi:type="AttributeDateWithLongRemainingDays" _delta="define">
           <sql>date_end_custom_support</sql>
           <default_value></default_value>
@@ -126,11 +152,17 @@
             <item id="date_end_ext_support" _delta="define">
               <rank>58</rank>
             </item>
-            <item id="date_end_custom_support" _delta="define">
+            <item id="latest_release" _delta="define">
               <rank>60</rank>
             </item>
-            <item id="endoflife_api" _delta="define">
+            <item id="date_latest_release" _delta="define">
               <rank>62</rank>
+            </item>
+            <item id="date_end_custom_support" _delta="define">
+              <rank>64</rank>
+            </item>
+            <item id="endoflife_api" _delta="define">
+              <rank>66</rank>
             </item>
             <item id="comment" _delta="define">
               <rank>68</rank>
