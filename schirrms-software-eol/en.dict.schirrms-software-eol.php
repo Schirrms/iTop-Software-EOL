@@ -26,5 +26,9 @@ Dict::Add('EN US', 'English', 'English', array(
   'Class:Software/Attribute:date_end_custom_support' => 'Software company specific end of maintenance support date',
   'Class:Software/Attribute:endoflife_api' => 'endoflife API URL',
   'Class:Software/Attribute:endoflife_api+' => 'Set this URL to update official dates directly from \'endoflife.date\'. This URL should be on the form \'https://endoflife.date/api/product/cycle.json\'',
+	'UI:datewithlongremainingdays_days' => ' %1$d Day(s) Left ',
+	'UI:datewithlongremainingyears_days' => ' %1$d Years(s) and %2$d Month(s) Left ',
+	'UI:datewithlongremainingdays_latedays' => ' Expired since %1$d Day(s) ',
+	'UI:datewithlongremainingyears_latedays' => ' Expired since %1$d Year(s) and %2$d Month(s) ',
 ));
 ?>

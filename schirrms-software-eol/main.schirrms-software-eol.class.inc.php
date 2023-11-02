@@ -23,11 +23,19 @@
         $dDateNow = new DateTime(date('Y-m-d'));
         $interval = $dDateNow->diff($dExpiration);
         $iInterval = $interval->format('%r%a');
-        if ( $iInterval >= 0 ) {
-          $sDiff = Dict::Format('UI:datewithremainingdays_days', $iInterval);
+				$iYearInterval = $interval->format('%r%y');
+				$iMonthInterval = $interval->format('%r%m');
+				if ( $iYearInterval > 0 ) {
+					$sDiff = Dict::Format('UI:datewithlongremainingyears_days', $iYearInterval, $iMonthInterval);
+				}
+        elseif ( $iInterval >= 0 ) {
+          $sDiff = Dict::Format('UI:datewithlongremainingdays_days', $iInterval);
         }
+				elseif ( $iYearInterval < 0 ) {
+					$sDiff = Dict::Format('UI:datewithlongremainingyears_latedays', -$iYearInterval, -$iMonthInterval);
+				}
         else {
-          $sDiff = Dict::Format('UI:datewithremainingdays_latedays', -$iInterval);
+          $sDiff = Dict::Format('UI:datewithlongremainingdays_latedays', -$iInterval);
         }
         $sRemaining = "$dRemaining ($sDiff)";
         // add some colorations, but only for active Certificates

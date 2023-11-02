@@ -26,5 +26,9 @@ Dict::Add('FR FR', 'French', 'Français', array(
   'Class:Software/Attribute:date_end_custom_support' => 'Date de fin de support retenue par l\'entreprise',
   'Class:Software/Attribute:endoflife_api' => 'URL de l\'API endoflife',
   'Class:Software/Attribute:endoflife_api+' => 'Positionnez cette URL pour chercher les dates officielles directement depuis \'endoflife.date\'. l\'URL devrait être sous la  forme \'https://endoflife.date/api/product/cycle.json\'',
+	'UI:datewithlongremainingdays_days' => ' %1$d jour(s) restant(s) ',
+	'UI:datewithlongremainingyears_days' => ' %1$d an(s) et %2$d mois restant(s) ',
+	'UI:datewithlongremainingdays_latedays' => ' Expiré depuis %1$d jour(s) ',
+	'UI:datewithlongremainingyears_latedays' => ' Expiré depuis %1$d an(s) et %2$d mois ',
 ));
 ?>
