@@ -58,3 +58,77 @@ class AttributeDateWithLongRemainingDays extends AttributeDate
 		return self::FormatLongRemainingDays($sValue, $oHostObject);
 	}
 }
+
+// A trigerred class instead of using Method AfterInsert, AfterUpdate and AfterDelete
+// iApplicationObjectExtension implementation found in application/applicationextension.inc.php
+class OSVersionTriggers implements iApplicationObjectExtension
+{
+	public function OnIsModified($oObject)
+	{
+		return false;
+	}
+	public function OnCheckToWrite($oObject)
+	{
+		return array();
+	}
+	public function OnCheckToDelete($oObject)
+	{
+		return array();
+	}
+	public function OnDBUpdate($oObject, $oChange = null)
+	{
+		if (($oObject instanceof Software) === true) {
+			SoftwareOSVersionFunct::SetEffectiveSoftwareEOLDate($oObject->GetKey());
+		} elseif (($oObject instanceof OSVersion) === true) {
+			SoftwareOSVersionFunct::SetEffectiveOSVersionEOLDate($oObject->GetKey());
+		}
+	}
+	public function OnDBInsert($oObject, $oChange = null)
+	{
+		if (($oObject instanceof Software) === true) {
+			SoftwareOSVersionFunct::SetEffectiveSoftwareEOLDate($oObject->GetKey());
+		} elseif (($oObject instanceof OSVersion) === true) {
+			SoftwareOSVersionFunct::SetEffectiveOSVersionEOLDate($oObject->GetKey());
+		}
+	}
+	public function OnDBDelete($oObject, $oChange = null)
+	{
+	}
+}
+
+class SoftwareOSVersionFunct
+{
+	/**
+	 * Here are the real deal funct for this extension
+	 */
+
+	 public static function SetEffectiveOSVersionEOLDate($device_id)
+	 {
+		 // set date_effective_eol field based on date_end_custom_support
+		 // or date_end_normal_support if date_end_custom_support is not set
+		 $oDevice = MetaModel::GetObject('OSVersion', $device_id);
+		 if (is_object($oDevice))
+		 {
+			 $eoldate = $oDevice->Get('date_end_normal_support');
+			 $custeoldate = $oDevice->Get('date_end_custom_support');
+			 if ( $custeoldate === null ) { $custeoldate = $eoldate; }
+			 $oDevice->Set('date_effective_eol', $custeoldate);
+			 $oDevice->DBUpdate();
+		 }
+	 }
+ 
+	public static function SetEffectiveSoftwareEOLDate($device_id)
+	{
+		// set date_effective_eol field based on date_end_custom_support
+		// or date_end_normal_support if date_end_custom_support is not set
+		$oDevice = MetaModel::GetObject('Software', $device_id);
+		if (is_object($oDevice))
+		{
+			$eoldate = $oDevice->Get('date_end_normal_support');
+			$custeoldate = $oDevice->Get('date_end_custom_support');
+			if ( $custeoldate === null ) { $custeoldate = $eoldate; }
+			$oDevice->Set('date_effective_eol', $custeoldate);
+			$oDevice->DBUpdate();
+		}
+	}
+}
