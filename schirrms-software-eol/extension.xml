@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension format="1.0">
   <extension_code>schirrms-software-eol</extension_code>
-  <version>1.0.0</version>
-  <label><![CDATA[Add EOL date to software and OS Version]]></label>
-  <description><![CDATA[Put here a longer description of your extension]]></description>
+  <version>0.1.0</version>
+  <label><![CDATA[No known End of Life Date yet]]></label>
+  <description><![CDATA[Add a lot of date fields to Software and OSVersion, mainly with the objective of handling End of life date. This extension can also store an 'endoflife.date' URL, allowing to query this site for latest information.]]></description>
   <mandatory>false</mandatory>
-  <more_info_url></more_info_url>
+  <more_info_url>https://github.com/Schirrms/iTop-Software-EOL</more_info_url>
 </extension>

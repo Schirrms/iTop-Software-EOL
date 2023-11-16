@@ -99,6 +99,22 @@
 				</list>
       </presentation>
     </class>
+		<class id="VirtualMachine" _delta="must_exist">
+			<fields>
+				<field id="osversion_eol" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>osversion_id</extkey_attcode>
+					<target_attcode>date_effective_eol</target_attcode>
+				</field>
+			</fields>
+		</class>
+		<class id="Server" _delta="must_exist">
+			<fields>
+				<field id="osversion_eol" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>osversion_id</extkey_attcode>
+					<target_attcode>date_effective_eol</target_attcode>
+				</field>
+			</fields>
+		</class>
     <class id="Software" _delta="must_exist">
       <fields>
         <field id="date_release" xsi:type="AttributeDate" _delta="define">
