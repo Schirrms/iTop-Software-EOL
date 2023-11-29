@@ -3,7 +3,7 @@
 /**
  * Some functions to work with the iTop-Software-EOL extensions
  * 
- * Pascal Schirrmann 2023 schirrms@schirrms.net
+ * Schirrms 2023 schirrms@schirrms.net
  */
 
 class AttributeDateWithLongRemainingDays extends AttributeDate
